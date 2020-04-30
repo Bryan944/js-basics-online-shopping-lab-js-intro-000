@@ -11,28 +11,45 @@ function setCart(c) {
 
 //var cart = [];
 function addToCart(item) {
+<<<<<<< HEAD
       cart.push({ itemName : item, itemPrice : Math.floor(Math.random()*100+1) });
  return `${item} has been added to your cart.`;
+=======
+      cart.push({ itemName : `${item}`, itemPrice : Math.floor(Math.random()*100+1) });
+ return `${item}` + ' ' + 'has been added to your cart.';
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 }
 
 
 
 function viewCart() {
+<<<<<<< HEAD
   var sen = 'In your cart, you have';
+=======
+  var sen = 'In your cart, you have ';
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
     //var cart = [{  itemName:"bananas", itemPrice: 17 }, { itemName:"pancake batter",itemPrice: 5 }, { itemName:"eggs", itemPrice: 49 }]
   if(cart.length >= 2 ){
       for(var item = 0; item < cart.length; item++){
 
               if(item ===  cart.length -1){
+<<<<<<< HEAD
         sen = `${sen} and ${cart[item].itemName} at $${cart[item].itemPrice}.`;
       }
             else{             //cart.slice(-1)[0]
       sen = `${sen} ${cart[item].itemName} at $${cart[item].itemPrice},`;
+=======
+        sen = sen +'and'+ ' '+ `${cart[item].itemName}` +' '+ 'at' +' '+ '$'+ `${cart[item].itemPrice}`+'.';
+      }
+            else{             //cart.slice(-1)[0]
+      sen = sen +  `${cart[item].itemName}` +' '+ 'at' +' '+ '$'+ `${cart[item].itemPrice}`+','+' ' ;
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
         }
     }
     return sen;
     }
   else if (cart.length === 1){
+<<<<<<< HEAD
           sen = `${sen} ${cart[0].itemName} at $${cart[0].itemPrice}.`;
           return sen;
 } else{
@@ -41,6 +58,16 @@ function viewCart() {
 
 }
 
+=======
+          sen = sen + `${cart[0].itemName}` +' '+ 'at' +' '+ '$'+ `${cart[0].itemPrice}`+'.';
+          return sen;
+} else{
+          return 'Your shopping cart is empty.';
+}
+
+}
+
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 
 
 
@@ -56,13 +83,21 @@ if(item  === cart.length ){
 }else {
         totalCost = totalCost + parseInt(`${cart[item].itemPrice}`,10) ;
 }
+<<<<<<< HEAD
+}
+}
+  return totalCost;
+=======
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 }
 }
   return totalCost;
 }
 
 
+
 function removeFromCart(item) {
+<<<<<<< HEAD
   //var removed=[];
   //var d;
         for(var i = 0; i < cart.length; i++){
@@ -73,12 +108,28 @@ function removeFromCart(item) {
       }
 }
 return 'That item is not in your cart.'
+=======
+  var removed=[];
+
+    if(cart.length > 0){
+      for (var item = 0;item < cart.length; item++){
+    if(item === true){
+          cart.splice(item,1);
+}   else{
+        removed.push(cart.splice(item,1));
+}return removed;
+}
+}return 'That item is not in your cart.'
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 }
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 //const cardNumber = Math.floor(Math.random() * 100000000)        //81387323
 
 function placeOrder(cardNumber) {
@@ -87,9 +138,15 @@ function placeOrder(cardNumber) {
         if(cardNumber === undefined ){
               return `Sorry, we don't have a credit card on file for you.`
         }else{
+<<<<<<< HEAD
             //removeFromCart();
             cart = [];
             return `Your total cost is $${cartTotal}, which will be charged to the card ${cardNumber}.`;
         }
 
+=======
+            removeFromCart();
+        }
+return `Your total cost is $${cartTotal}, which will be charged to the card ${cardNumber}.`;
+>>>>>>> b318302274dd62ffe7ab424b46e109bed77a8096
 }
